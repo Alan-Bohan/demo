@@ -1,0 +1,39 @@
+<div id="ToolBar">
+  <div
+    Button
+    [type]="'primary'"
+    (onClick)="showModal('addToProjectModal')"
+  >
+    123
+  </div>
+</div>
+<!----------------------AddToProjectModal---------------------->
+<Modal
+  [(ngModel)]="this.modalState.addToProjectModal"
+  [popup]="true"
+  [animationType]="'slide-up'"
+  (onClose)="onClose('addToProjectModal')"
+>
+  <List
+    [renderHeader]="'header'"
+    [className]="'popup-list'"
+  >
+    <ListItem
+      Picker
+      [extra]="'123'"
+      [arrow]="'horizontal'"
+      [data]="projectList"
+    >
+      <span class="required-sign">*</span>
+      Project
+    </ListItem>
+    <ListItem>
+      <div
+        Button
+        [type]="'primary'"
+      >
+        Submit
+      </div>
+    </ListItem>
+  </List>
+</Modal>
